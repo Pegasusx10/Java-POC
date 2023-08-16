@@ -1,0 +1,37 @@
+import java.util.HashSet;
+
+public class HashSetPOC {
+    public static void main(String[] args) {
+        // Create a HashSet to store names
+        HashSet<String> namesSet = new HashSet<>();
+
+        // Add some names to the set
+        namesSet.add("Alice");
+        namesSet.add("Bob");
+        namesSet.add("Charlie");
+        namesSet.add("Alice");
+        namesSet.add("Paul");
+        namesSet.add("Roald");
+        namesSet.add("Paul");
+
+        // Print the set
+        System.out.println("Names set: " + namesSet);
+
+        // Check the size of the set
+        int setSize = namesSet.size();
+        System.out.println("Size of the set: " + setSize);
+
+        // Check if a name exists in the set
+        String searchName = "Bob";
+        boolean containsName = namesSet.contains(searchName);
+        System.out.println("Does the set contain " + searchName + "? " + containsName);
+
+        // Remove a name from the set
+        String removeName = "Charlie";
+        boolean isRemoved = namesSet.remove(removeName);
+        System.out.println("Is " + removeName + " removed? " + isRemoved);
+
+        // Print the updated set
+        System.out.println("Updated names set: " + namesSet);
+    }
+}
