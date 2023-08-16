@@ -1,0 +1,51 @@
+//Importing Scanner Function
+import java.util.Scanner;
+
+//Opening code for Calculator app
+public class CalculatorApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //Input first number
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        //Input second number
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        //Input type of Operation
+        System.out.print("Enter the operation (+, -, *, /): ");
+        char operation = scanner.next().charAt(0);
+
+        // Perform the selected operation
+        double result = 0;
+
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    System.out.println("Cannot divide by zero.");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Invalid operation.");
+                return;
+        }
+        // Prints the result
+        System.out.println("Result: " + result);
+
+        scanner.close();
+    }
+}
